@@ -3,17 +3,13 @@ import sys
 
 import pygame
 
-from pygame.font import Font
-from pygame.rect import Rect
-from pygame.surface import Surface
-
 from code.Const import C_BRANCO, WIN_HEIGHT, MENU_OPTION, EVENT_ENEMY, SPAWN_TIME, EVENT_TIMEOUT, \
     TEMPO_STEP, TEMPO_NIVEL
-from code.Inimigos import Inimigos
+from code.Inimigo import Inimigo
 from code.Entity import Entity
 from code.EntityFactory import EntityFactory
 from code.EntityMediator import EntityMediator
-from code.Jogadores import Jogadores
+from code.Jogador import Jogador
 
 
 class Nivel:
@@ -44,7 +40,7 @@ class Nivel:
             for ent in self.entity_list:
                 self.window.blit(source=ent.surf, dest=ent.rect)
                 ent.move()
-                if isinstance(ent, (Jogadores, Inimigos)):
+                if isinstance(ent, (Jogador, Inimigo)):
                     tiro = ent.tiro()
                     if tiro is not None:
                         self.entity_list.append(tiro)
@@ -63,15 +59,15 @@ class Nivel:
                     self.tempo -= TEMPO_STEP
                     if self.tempo == 0:
                         for ent in self.entity_list:
-                            if isinstance(ent, Jogadores) and ent.name == 'Jogador1':
+                            if isinstance(ent, Jogador) and ent.name == 'Jogador1':
                                 jogador_ponto[0] = ent.ponto
-                            if isinstance(ent, Jogadores) and ent.name == 'Jogador2':
+                            if isinstance(ent, Jogador) and ent.name == 'Jogador2':
                                 jogador_ponto[1] = ent.ponto
                         return True
 
                 found_jogador = False
                 for ent in self.entity_list:
-                    if isinstance(ent, Jogadores):
+                    if isinstance(ent, Jogador):
                         found_jogador = True
 
                 if not found_jogador:

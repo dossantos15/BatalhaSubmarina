@@ -6,7 +6,7 @@ from code.Entity import Entity
 from code.JogadorTiro import JogadorTiro
 
 
-class Jogadores(Entity):
+class Jogador(Entity):
     def __init__(self, name: str, position: tuple):
         super().__init__(name, position)
         self.tiro_delay = ENTITY_TIRO_DELAY[self.name]

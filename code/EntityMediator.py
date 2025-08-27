@@ -2,7 +2,7 @@ from code.Const import WIN_WIDTH
 from code.Inimigo import Inimigo
 from code.InimigoTiro import InimigoTiro
 from code.Entity import Entity
-from code.Jogadores import Jogadores
+from code.Jogador import Jogador
 from code.JogadorTiro import JogadorTiro
 
 
@@ -27,9 +27,9 @@ class EntityMediator:
             valid_interaction = True
         elif isinstance(ent1, JogadorTiro) and isinstance(ent2, Inimigo):
             valid_interaction = True
-        elif isinstance(ent1, Jogadores) and isinstance(ent2, InimigoTiro):
+        elif isinstance(ent1, Jogador) and isinstance(ent2, InimigoTiro):
             valid_interaction = True
-        elif isinstance(ent1, InimigoTiro) and isinstance(ent2, Jogadores):
+        elif isinstance(ent1, InimigoTiro) and isinstance(ent2, Jogador):
             valid_interaction = True
 
         if valid_interaction:
