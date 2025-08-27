@@ -37,8 +37,8 @@ class EntityMediator:
                     ent1.rect.left <= ent2.rect.right and
                     ent1.rect.bottom >= ent2.rect.top and
                     ent1.rect.top <= ent2.rect.bottom):
-                ent1.vida -= ent2.damage
-                ent2.vida -= ent1.damage
+                ent1.vida -= ent2.dano
+                ent2.vida -= ent1.dano
                 ent1.last_dmg = ent2.name
                 ent2.last_dmg = ent1.name
 

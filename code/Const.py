@@ -45,7 +45,7 @@ ENTITY_VIDA = {
     'Jogador1': 150,
     'Jogador1Tiro': 1,
     'Jogador2': 150,
-    'Jogador2Tiro': 1,
+    'Jogador2Tiro': 2,
     'Inimigo1': 50,
     'Inimigo1Tiro': 2,
     'Inimigo2': 60,
@@ -98,9 +98,9 @@ ENTITY_PONTO = {
 
 ENTITY_TIRO_DELAY = {
     'Jogador1': 20,
-    'Jogador2': 15,
+    'Jogador2': 20,
     'Inimigo1': 100,
-    'Inimigo2': 200,
+    'Inimigo2': 150,
 }
 
 # M
@@ -123,7 +123,7 @@ PLAYER_KEY_SHOOT = {'Jogador1': pygame.K_RCTRL,
                     'Jogador2': pygame.K_LCTRL}
 
 # S
-SPAWN_TIME = 4000
+SPAWN_TIME = 3000
 
 # T
 TEMPO_STEP = 100

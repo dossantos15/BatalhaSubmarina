@@ -12,7 +12,7 @@ class Entity(ABC):
         self.rect = self.surf.get_rect(left=position[0], top=position[1])
         self.speed = 0
         self.vida = ENTITY_VIDA[self.name]
-        self.damage = ENTITY_DANO[self.name]
+        self.dano = ENTITY_DANO[self.name]
         self.ponto = ENTITY_PONTO[self.name]
         self.last_dmg = 'None'
 
