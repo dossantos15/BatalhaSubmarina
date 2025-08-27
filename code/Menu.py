@@ -1,5 +1,5 @@
 import pygame.image
-from pygame import Surface, Rect
+from pygame import Rect, Surface
 from pygame.font import Font
 
 from code.Const import WIN_WIDTH, MENU_OPTION, C_BRANCO, C_AMARELO, C_PRETO

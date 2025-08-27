@@ -12,13 +12,13 @@ class EntityMediator:
     def __verify_collision_window(ent: Entity):
         if isinstance(ent, Inimigo):
             if ent.rect.right < 0:
-                ent.health = 0
+                ent.vida = 0
         if isinstance(ent, JogadorTiro):
             if ent.rect.left >= WIN_WIDTH:
-                ent.health = 0
+                ent.vida = 0
         if isinstance(ent, InimigoTiro):
             if ent.rect.right <= 0:
-                ent.health = 0
+                ent.vida = 0
 
     @staticmethod
     def __verify_collision_entity(ent1, ent2):
@@ -37,8 +37,8 @@ class EntityMediator:
                     ent1.rect.left <= ent2.rect.right and
                     ent1.rect.bottom >= ent2.rect.top and
                     ent1.rect.top <= ent2.rect.bottom):
-                ent1.health -= ent2.damage
-                ent2.health -= ent1.damage
+                ent1.vida -= ent2.damage
+                ent2.vida -= ent1.damage
                 ent1.last_dmg = ent2.name
                 ent2.last_dmg = ent1.name
 
@@ -65,7 +65,7 @@ class EntityMediator:
     @staticmethod
     def verify_health(entity_list: list[Entity]):
         for ent in entity_list:
-            if ent.health <= 0:
+            if ent.vida <= 0:
                 if isinstance(ent, Inimigo):
                     EntityMediator.__giv_ponto(ent, entity_list)
                 entity_list.remove(ent)

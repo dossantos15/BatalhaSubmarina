@@ -2,6 +2,8 @@ import random
 import sys
 
 import pygame
+from pygame import Surface, Rect
+from pygame.font import Font
 
 from code.Const import C_BRANCO, WIN_HEIGHT, MENU_OPTION, EVENT_ENEMY, SPAWN_TIME, EVENT_TIMEOUT, \
     TEMPO_STEP, TEMPO_NIVEL
@@ -45,9 +47,9 @@ class Nivel:
                     if tiro is not None:
                         self.entity_list.append(tiro)
                 if ent.name == 'Jogador1':
-                    self.level_text(14, f'Jogador 1 - Vida: ({ent.health}) | Pontos: {ent.ponto}', C_BRANCO, (10, 25))
+                    self.level_text(14, f'Jogador 1 - Vida: ({ent.vida}) | Pontos: {ent.ponto}', C_BRANCO, (10, 25))
                 if ent.name == 'Jogador2':
-                    self.level_text(14, f'Jogador 2 - Vida: ({ent.health}) | Pontos: {ent.ponto}', C_BRANCO, (10, 45))
+                    self.level_text(14, f'Jogador 2 - Vida: ({ent.vida}) | Pontos: {ent.ponto}', C_BRANCO, (10, 45))
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
